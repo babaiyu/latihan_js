@@ -18,7 +18,8 @@ function maxParam(text) {
             }
         }
     }
-    
+    console.log(sort_arr);
+
     console.log(isPalindrome);
     if (!isPalindrome) {
         return 'Bukan Palindrom';
@@ -37,4 +38,4 @@ function maxParam(text) {
     }
 }
 
-console.log(maxParam("MalaM"));
+console.log(maxParam("Malam"));

@@ -1,10 +1,11 @@
+
 function biodata(name, age) {
-    const payload = {
+    const biodataAsli = {
         name: name,
         age: age,
-        address: 'Jakarta, Indonesia',
-        hobbies: ['Membaca', 'rebahan'],
-        is_maried: false,
+        address: "Jakarta Selatan, Indonesia",
+        hobbies: ['Membaca', 'Berenang', 'Ngoding', 'Rebahan'],
+        is_married: false,
         list_school: [
             {
                 name: 'SD',
@@ -22,22 +23,24 @@ function biodata(name, age) {
                 name: 'SMK',
                 year_in: '2015',
                 year_out: '2018',
-                major: 'RPL',
+                major: "Rekayasa Perangkat Lunak",
             },
         ],
         skills: [
             {
-                skill_name: 'Javascript',
-                level: 'advanced',
+                skill_name: 'Memasak',
+                level: 'beginner',
             },
             {
-                skill_name: 'TypeScript',
-                level: 'advanced',
+                skill_name: 'Membaca',
+                level: 'expert',
             },
         ],
-        interest_in_coding: true,
+        interest_in_coding: true
     };
-    console.log(JSON.stringify(payload));
+    
+    const dataJSON = JSON.stringify(biodataAsli);
+    return dataJSON;
 }
 
-biodata('Bayu Permana', 19);
+console.log(biodata("Budi Setyawan", 19));
