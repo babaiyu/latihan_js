@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LAtihan SOal 6b</title>
+  <link href="/public/css/bulma.css" rel="stylesheet" />
+  <link href="/public/css/style.css" rel="stylesheet" />
+  <script src="/public/js/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#showAddModal").click(function () {
+        $(".modal").addClass("is-active");
+      });
+      $(".modal-close").click(function () {
+        $(".modal").removeClass("is-active");
+      });
+    })
+  </script>
+</head>
+
+<body>
+  <nav class="navbar is-primary">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        WarunkQU
+      </a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-light" id="showAddModal" href="javascript:void(0);">
+            <strong>Add</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="table-container">
+      <table class="table is-fullwidth is-striped table is-bordered is-hoverable">
+        <thead class="is-primary">
+          <tr>
+            <th>Cashier</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each data}}
+          <tr>
+            <td>{{cashier}}</td>
+            <td>{{product}}</td>
+            <td>{{category}}</td>
+            <td>{{price}}</td>
+            <td>
+              <div class="buttons">
+                <a class="button is-secondary">
+                  <strong>Edit</strong>
+                </a>
+                <a class="button is-danger">
+                  <strong>Delete</strong>
+                </a>
+              </div>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1>This is Modal</h1>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+</body>
+
+</html>

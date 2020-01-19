@@ -1,0 +1,14 @@
+body {
+  background-color: #FFF;
+  flex: 1;
+}
+
+table {
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+thead {
+  background-color: black;
+  color: #FFF;
+}
