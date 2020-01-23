@@ -19,10 +19,16 @@
       $("#showEditModal").click(function () {
         $("#modalEdit").addClass("is-active");
       });
+      $("#showDeleteModal").click(function () {
+        $("#modalDelete").addClass("is-active");
+      });
       $("#closeAddModal").click(function () {
         $(".modal").removeClass("is-active");
       });
       $("#closeEditModal").click(function () {
+        $(".modal").removeClass("is-active");
+      });
+      $("#closeDeleteModal").click(function () {
         $(".modal").removeClass("is-active");
       });
 
@@ -74,7 +80,7 @@
                 <a class="button is-secondary" id="showEditModal">
                   <strong>Edit</strong>
                 </a>
-                <a class="button is-danger">
+                <a class="button is-danger" id="showDeleteModal">
                   <strong>Delete</strong>
                 </a>
               </div>
@@ -223,6 +229,31 @@
       </div>
     </div>
     <button class="modal-close is-large" id="closeEditModal" aria-label="close"></button>
+  </div>
+
+  <div class="modal" id="modalDelete">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="card">
+        <div class="card-header">
+          <p class="card-header-title">Delete</p>
+          <a href="#" id="closeDeleteModal" class="card-header-icon" aria-label="close">
+            <span class="icon">
+              <i class="fas fa-times"></i>
+            </span>
+          </a>
+        </div>
+        <div class="card-content">
+          <p class="title">
+            Data Raisa Berhasil dihapus
+          </p>
+          <p class="subtitle">
+            Success Delete
+          </p>
+        </div>
+      </div>
+    </div>
+    <button class="modal-close is-large" id="closeDeleteModal" aria-label="close"></button>
   </div>
 </body>
 
