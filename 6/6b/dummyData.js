@@ -11,12 +11,30 @@ const dummyData = [
     category: 'Food',
     price: 15000,
   },
+];
+
+const dummyCashier = [
   {
-    cashier: 'Bayu Permana',
-    product: 'Emapal Gentong',
-    category: 'Food',
-    price: 50000,
+    cashier: 'Pevita Pearce',
+  },
+  {
+    cashier: 'Raisa Andriana',
   },
 ];
 
-module.exports = dummyData;
+const dummyMenu = [
+  {
+    product: 'Latte',
+    category: 'Drink',
+  },
+  {
+    product: 'Cake',
+    category: 'Food',
+  },
+];
+
+module.exports = {
+  dummyData,
+  dummyCashier,
+  dummyMenu,
+};

@@ -8,12 +8,24 @@
   <title>LAtihan SOal 6b</title>
   <link href="/public/css/bulma.css" rel="stylesheet" />
   <link href="/public/css/style.css" rel="stylesheet" />
+  <link href="/public/css/fontawesome.css" rel="stylesheet" />
   <script src="/public/js/jquery-3.4.1.min.js"></script>
+  <script src="/public/js/fontawesome.js"></script>
   <script>
     $(document).ready(function () {
       $("#showAddModal").click(function () {
-        $(".modal").addClass("is-active");
+        $("#modalAdd").addClass("is-active");
       });
+      $("#showEditModal").click(function () {
+        $("#modalEdit").addClass("is-active");
+      });
+      $("#closeAddModal").click(function () {
+        $(".modal").removeClass("is-active");
+      });
+      $("#closeEditModal").click(function () {
+        $(".modal").removeClass("is-active");
+      });
+
       $(".modal-close").click(function () {
         $(".modal").removeClass("is-active");
       });
@@ -59,7 +71,7 @@
             <td>{{price}}</td>
             <td>
               <div class="buttons">
-                <a class="button is-secondary">
+                <a class="button is-secondary" id="showEditModal">
                   <strong>Edit</strong>
                 </a>
                 <a class="button is-danger">
@@ -74,12 +86,143 @@
     </div>
   </div>
 
-  <div class="modal">
+
+  {{!-- MODAL ADD --}}
+  <div class="modal" id="modalAdd">
     <div class="modal-background"></div>
     <div class="modal-content">
-      <h1>This is Modal</h1>
+      <div class="card">
+        <div class="card-header">
+          <p class="card-header-title">Add</p>
+          <a href="#" id="closeAddModal" class="card-header-icon" aria-label="close">
+            <span class="icon">
+              <i class="fas fa-times"></i>
+            </span>
+          </a>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <form>
+              <div class="field">
+                <label class="label">Nama Kasir</label>
+                <div class="select">
+                  <select>
+                    {{#each dataCashier}}
+                    <option>{{cashier}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Nama Produk</label>
+                <div class="select">
+                  <select>
+                    {{#each dataMenu}}
+                    <option>{{product}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Jenis Produk</label>
+                <div class="control">
+                  <p class="control has-icons-left">
+                    <input class="input" type="text" placeholder="Jenis Produk" disabled>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-utensils"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Harga</label>
+                <div class="control">
+                  <p class="control has-icons-left">
+                    <input class="input" type="number" placeholder="Harga">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-tag"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-footer-item">Add</a>
+        </div>
+      </div>
     </div>
-    <button class="modal-close is-large" aria-label="close"></button>
+    <button class="modal-close is-large" id="closeAddModal" aria-label="close"></button>
+  </div>
+
+  {{!-- MODAL EDIT --}}
+  <div class="modal" id="modalEdit">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="card">
+        <div class="card-header">
+          <p class="card-header-title">Edit</p>
+          <a href="#" id="closeEditModal" class="card-header-icon" aria-label="close">
+            <span class="icon">
+              <i class="fas fa-times"></i>
+            </span>
+          </a>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <form>
+              <div class="field">
+                <label class="label">Nama Kasir</label>
+                <div class="select">
+                  <select>
+                    {{#each dataCashier}}
+                    <option>{{cashier}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Nama Produk</label>
+                <div class="select">
+                  <select>
+                    {{#each dataMenu}}
+                    <option>{{product}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Jenis Produk</label>
+                <div class="control">
+                  <p class="control has-icons-left">
+                    <input class="input" type="text" placeholder="Jenis Produk" disabled>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-utensils"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Harga</label>
+                <div class="control">
+                  <p class="control has-icons-left">
+                    <input class="input" type="number" placeholder="Harga">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-tag"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-footer-item">Edit</a>
+        </div>
+      </div>
+    </div>
+    <button class="modal-close is-large" id="closeEditModal" aria-label="close"></button>
   </div>
 </body>
 
